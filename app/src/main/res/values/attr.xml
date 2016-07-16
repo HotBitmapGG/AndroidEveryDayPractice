@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--仿探探滑动卡片-->
+    <declare-styleable name="card">
+        <attr name="bottomMarginTop" format="dimension" />
+        <attr name="yOffsetStep" format="dimension" />
+    </declare-styleable>
+
+    <!--Item条目控件-->
+    <declare-styleable name="ItemArrowCardView">
+        <attr name="name" format="string"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="io.netopen.hotbitmapgg.androideverydaypractice"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 爱心点赞界面-->
+        <activity
+            android:name=".widght_demo.LoveActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Rxjava练习界面-->
+        <activity
+            android:name=".rxjava.RxTestActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- RecycleView练习界面-->
+        <activity
+            android:name=".recycleview.RecycleViewDemoActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Rxjava例子界面-->
+        <activity
+            android:name=".rxjava.RxJavaSampleActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- RxjavaDemo展示界面-->
+        <activity
+            android:name=".rxjava.RxJavaDemoActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 自定义进度条展示界面-->
+        <activity
+            android:name=".widght_demo.CircleProgressBarActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 贝塞尔曲线展示界面-->
+        <activity
+            android:name=".widght_demo.BezaerActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 表格布局展示界面-->
+        <activity
+            android:name=".widght_demo.TableActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 仿探探界面-->
+        <activity
+            android:name=".widght_demo.SlideGankMeiziActivity"
+            android:screenOrientation="portrait" />
+
+        <!--安卓滑动实现演示界面-->
+        <activity
+            android:name=".widght_demo.ScrollDemoActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

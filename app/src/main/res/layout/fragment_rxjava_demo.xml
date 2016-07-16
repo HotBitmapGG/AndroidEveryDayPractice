@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SpringScrollView
+        android:id="@+id/sping_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
+                android:id="@+id/btn_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:name="RxJava示例" />
+
+
+        </LinearLayout>
+
+
+    </io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SpringScrollView>
+
+</LinearLayout>
