@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import io.netopen.hotbitmapgg.androideverydaypractice.R;
 import io.netopen.hotbitmapgg.androideverydaypractice.utils.GankMeiziDateUtil;
 
 /**

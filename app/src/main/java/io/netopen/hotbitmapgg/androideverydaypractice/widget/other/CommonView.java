@@ -1,4 +1,4 @@
-package io.netopen.hotbitmapgg.androideverydaypractice.widght_demo;
+package io.netopen.hotbitmapgg.androideverydaypractice.widget.other;
 
 import android.content.Context;
 import android.graphics.Canvas;

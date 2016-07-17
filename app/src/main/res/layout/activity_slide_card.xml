@@ -5,6 +5,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <include layout="@layout/layout_toolbar" />
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -49,22 +51,22 @@
                         android:background="@drawable/like_button"/>
                 </LinearLayout>
 
-                <com.hotbitmapgg.studyproject.hcc.widget.slidecard.CardItemView
+                <io.netopen.hotbitmapgg.androideverydaypractice.widget.slidecard.CardItemView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"/>
 
-                <com.hotbitmapgg.studyproject.hcc.widget.slidecard.CardItemView
+                <io.netopen.hotbitmapgg.androideverydaypractice.widget.slidecard.CardItemView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"/>
 
-                <com.hotbitmapgg.studyproject.hcc.widget.slidecard.CardItemView
+                <io.netopen.hotbitmapgg.androideverydaypractice.widget.slidecard.CardItemView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"/>
 
-                <com.hotbitmapgg.studyproject.hcc.widget.slidecard.CardItemView
+                <io.netopen.hotbitmapgg.androideverydaypractice.widget.slidecard.CardItemView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"/>

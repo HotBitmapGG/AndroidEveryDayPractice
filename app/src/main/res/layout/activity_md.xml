@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.hotbitmapgg.studyproject.hcc.widget.SpringScrollView
+    <include layout="@layout/layout_toolbar" />
+
+    <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SpringScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -17,7 +19,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/md_btn_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,7 +28,7 @@
 
             <include layout="@layout/layout_line_view" />
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/md_btn_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,6 +36,6 @@
         </LinearLayout>
 
 
-    </com.hotbitmapgg.studyproject.hcc.widget.SpringScrollView>
+    </io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SpringScrollView>
 
 </LinearLayout>

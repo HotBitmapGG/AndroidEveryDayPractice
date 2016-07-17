@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <include layout="@layout/layout_toolbar"/>
+    <include layout="@layout/layout_toolbar" />
 
 
     <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.Bezaer

@@ -236,7 +236,7 @@ public class RxJavaSampleActivity extends AbsBaseActivity
                     @Override
                     public void call(Long aLong)
                     {
-                        Snackbar.make(mRootlayout, "2秒后执行的操作", Snackbar.LENGTH_SHORT).show();
+                       // Snackbar.make(mRootlayout, "2秒后执行的操作", Snackbar.LENGTH_SHORT).show();
                     }
                 });
 

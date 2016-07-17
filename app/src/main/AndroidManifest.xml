@@ -2,7 +2,11 @@
 <manifest package="io.netopen.hotbitmapgg.androideverydaypractice"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
+        android:name=".StudyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,6 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.CustomWidgetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MdWidgetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RxJavaActivity"
+            android:screenOrientation="portrait" />
 
         <!-- 爱心点赞界面-->
         <activity

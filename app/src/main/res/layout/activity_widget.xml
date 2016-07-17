@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/layout_toolbar" />
+
     <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SpringScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,14 +30,14 @@
 
             <include layout="@layout/layout_line_view" />
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/widget_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="自定义圆形进度条" />
 
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/widget_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,14 +46,14 @@
 
             <include layout="@layout/layout_line_view" />
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/widget_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="贝塞尔线相关" />
 
 
-            <com.hotbitmapgg.studyproject.hcc.widget.ItemArrowCardView
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
                 android:id="@+id/widget_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
