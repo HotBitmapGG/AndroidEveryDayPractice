@@ -11,6 +11,8 @@ public class RetrofitHelper
 
     public static final String BASE_GANK_URL = "http://gank.io/api/";
 
+    public static final String BASE_ZHUANGBI_URL = "http://zhuangbi.info/";
+
 
     /**
      * Gank妹子Api
@@ -30,5 +32,26 @@ public class RetrofitHelper
         GankMeiziApi gankMeiziApi = mRetrofit.create(GankMeiziApi.class);
 
         return gankMeiziApi;
+    }
+
+    /**
+     * 表情包搜索Api
+     *
+     * @return
+     */
+    public static ExpressionPackageApi getExpressionPackageApi()
+    {
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_ZHUANGBI_URL)
+                .client(new OkHttpClient())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ExpressionPackageApi expressionPackageApi = retrofit.create(ExpressionPackageApi.class);
+
+        return expressionPackageApi;
     }
 }
