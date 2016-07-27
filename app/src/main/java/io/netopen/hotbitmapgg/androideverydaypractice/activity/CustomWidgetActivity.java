@@ -87,4 +87,11 @@ public class CustomWidgetActivity extends AbsBaseActivity
 
         startActivity(new Intent(this, SlideGankMeiziActivity.class));
     }
+
+    @OnClick(R.id.widget_6)
+    void startPathDemo()
+    {
+
+        startActivity(new Intent(this, PathDemoActivity.class));
+    }
 }

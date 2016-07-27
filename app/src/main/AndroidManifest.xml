@@ -82,6 +82,11 @@
             android:name=".widght_demo.ScrollDemoActivity"
             android:screenOrientation="portrait" />
 
+        <!--PathDemo界面-->
+        <activity
+            android:name=".activity.PathDemoActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

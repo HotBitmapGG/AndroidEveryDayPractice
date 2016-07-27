@@ -60,6 +60,14 @@
                 android:layout_marginTop="10dp"
                 app:name="仿探探滑动卡片效果" />
 
+            <include layout="@layout/layout_line_view" />
+
+            <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.ItemArrowCardView
+                android:id="@+id/widget_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Path练习相关" />
+
 
         </LinearLayout>
 
