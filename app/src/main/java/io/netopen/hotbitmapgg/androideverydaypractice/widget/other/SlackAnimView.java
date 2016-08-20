@@ -1,4 +1,4 @@
-package io.netopen.hotbitmapgg.androideverydaypractice.widget;
+package io.netopen.hotbitmapgg.androideverydaypractice.widget.other;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

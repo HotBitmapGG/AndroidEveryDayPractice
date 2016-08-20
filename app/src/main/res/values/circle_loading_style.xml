@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingStyle">
+        <attr name="textSize_1" format="dimension|reference"/><!-- 字体大小 -->
+        <attr name="textColor_1" format="color|reference"/><!-- 字体颜色 -->
+        <attr name="strokeWidth" format="dimension|reference"/><!-- 圆环大小 -->
+        <attr name="isShowGraduationBackground" format="boolean"/><!-- 是否显示背景刻度 -->
+        <attr name="isShowOutRoll" format="boolean"/><!-- 是否显示外部进度框 -->
+        <attr name="startAngle" format="integer|reference"/><!-- 开始的角度 -->
+        <attr name="max_1" format="integer|reference"/><!-- 最大值 -->
+        <attr name="progress" format="integer|reference"/><!-- 默认进度值 -->
+        <attr name="graduationBackgroundColor" format="color|reference"/><!-- 刻度的背景颜色 -->
+        <attr name="graduationWidth" format="dimension|reference"/><!-- 刻度的宽度 -->
+        <attr name="graduationCount" format="integer|reference"/><!-- 刻度的个数 -->
+    </declare-styleable>
+</resources>
