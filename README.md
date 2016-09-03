@@ -28,7 +28,7 @@
  
    * 圆环进度条:https://github.com/HotBitmapGG/RingProgressBar
  
-   * 安卓学习代码练习:https://github.com/HotBitmapGG/AndroidEveryDayPractice
+   * 仿芝麻信用圆环进度: https://github.com/HotBitmapGG/CreditSesameRingView
    
    * 轻量级的RecycleViewAdapter辅助类库 :https://github.com/HotBitmapGG/EasyRecycleAdapterHelper
 
