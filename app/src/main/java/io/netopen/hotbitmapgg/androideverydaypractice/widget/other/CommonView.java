@@ -2,7 +2,10 @@ package io.netopen.hotbitmapgg.androideverydaypractice.widget.other;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -16,18 +19,35 @@ public class CommonView extends View
 
     private Paint mPaint;
 
+    /**
+     * 构造函数 在代码中初始化时调用
+     * CommonView commonView = new CommonView();
+     *
+     * @param context
+     */
     public CommonView(Context context)
     {
+
         this(context, null);
     }
 
+    /**
+     * 构造函数 在xml中使用时调用
+     * attrs 这个是用于自定义属性时使用
+     * 在res-values目录下 建一个attr文件夹
+     *
+     * @param context
+     * @param attrs
+     */
     public CommonView(Context context, AttributeSet attrs)
     {
+
         this(context, attrs, 0);
     }
 
     public CommonView(Context context, AttributeSet attrs, int defStyleAttr)
     {
+
         super(context, attrs, defStyleAttr);
 
         init();
@@ -35,12 +55,22 @@ public class CommonView extends View
 
     private void init()
     {
+
+        // 初始化画笔
         mPaint = new Paint();
     }
 
 
     /**
      * View的测量
+     * <p>
+     * UNSPECIFIED：未指定测量模式。View大小不确定，想要多大有多大。
+     * <p>
+     * EXACTLY： 精确值模式。当控件的width和height设置为具体值或者match_parent时就是这个模式。
+     * <p>
+     * AT_MOST：最大值模式。父布局决定子布局大小（例如：父布局width或者height设置一个默认的精确值，子布局设置为wrap_content。
+     * 此时子布局的最大width或者height就是父布局的width或者height）。
+     * 使用这种测量模式的View，设置的一定是wrap_content。
      *
      * @param widthMeasureSpec
      * @param heightMeasureSpec
@@ -49,12 +79,14 @@ public class CommonView extends View
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
+
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
 
     /**
-     * View的布局
+     * 确定子view的位置
+     * 一般是ViewGroup会使用这个方法
      *
      * @param changed
      * @param left
@@ -66,7 +98,47 @@ public class CommonView extends View
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom)
     {
+
         super.onLayout(changed, left, top, right, bottom);
+    }
+
+
+    /**
+     * 当View的宽高都确定回调该方法
+     * 可以拿到已经测量后的宽高值
+     *
+     * @param w
+     * @param h
+     * @param oldw
+     * @param oldh
+     */
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh)
+    {
+
+        super.onSizeChanged(w, h, oldw, oldh);
+    }
+
+    /**
+     * View的生命周期方法
+     * 添加至窗口
+     */
+    @Override
+    protected void onAttachedToWindow()
+    {
+
+        super.onAttachedToWindow();
+    }
+
+    /**
+     * View的生命周期方法
+     * 从窗口中删除
+     */
+    @Override
+    protected void onDetachedFromWindow()
+    {
+
+        super.onDetachedFromWindow();
     }
 
     /**
@@ -75,8 +147,11 @@ public class CommonView extends View
      * View的绘制大致分为4步
      * 1，绘制背景
      * 2，绘制自己
-     * 3，绘制子View
+     * 3，绘制子View（ViewGroup）
      * 4，绘制滚动条
+     * <p>
+     * Canvas基本Api使用
+     * 绘制各种图形
      *
      * @param canvas
      */
@@ -85,71 +160,116 @@ public class CommonView extends View
     protected void onDraw(Canvas canvas)
     {
 
+
         /**
-         * Canvas基本Api使用
-         * 绘制各种图形
+         * 绘制一个矩形
          */
-
-
-//        //绘制白色矩形
-//        mPaint.setColor(Color.LTGRAY);
-//        canvas.drawRect(100, 100, 800, 800, mPaint);
-//        mPaint.reset();
-
-//        //绘制直线
-//        mPaint.setColor(Color.BLACK);
-//        mPaint.setStrokeWidth(10);
-//        canvas.drawLine(0, 100, 500, 0, mPaint);
-//        mPaint.reset();
-//
-//
-//        //绘制带边框的矩形
-//        mPaint.setColor(Color.BLACK);
-//        mPaint.setARGB(150, 90, 255, 0);
-//        mPaint.setStyle(Paint.Style.STROKE);
-//        RectF rect = new RectF(0 , 0 , 100 , 100);
-//        canvas.drawRect(rect, mPaint);
-//        mPaint.reset();
-//
-//
-//        //绘制实心圆
-//        mPaint.setColor(Color.BLUE);
-//        mPaint.setStrokeWidth(14);
-//        mPaint.setAntiAlias(true);
-//        canvas.drawCircle(200, 200, 100, mPaint);
-//        mPaint.reset();
-//
-//        //绘制椭圆
-//        mPaint.setColor(Color.YELLOW);
-//        mPaint.setAntiAlias(true);
-//        mPaint.setStrokeWidth(10);
-//        RectF rectF = new RectF(200, 400, 600, 600);
-//        canvas.drawOval(rectF, mPaint);
-//        mPaint.reset();
-
-//        //绘制文字
-//        mPaint.setColor(Color.BLACK);
-//        mPaint.setTextSize(60);
-//        mPaint.setUnderlineText(true);
-//        canvas.drawText("绘制文字", 100, 100, mPaint);
-//        mPaint.reset();
+        //画笔设置颜色
+        mPaint.setColor(Color.LTGRAY);
+        //利用canvas绘制矩形
+        canvas.drawRect(100, 100, 400, 400, mPaint);
+        //重置画笔对象
+        mPaint.reset();
 
 
         /**
-         * canvas.translate的使用
-         *
-         * 平移画布
+         * 绘制直线
          */
 
-//        canvas.drawColor(Color.LTGRAY);
-//        mPaint.setColor(Color.BLUE);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("平移前的文字", 200, 200, mPaint);
-//        mPaint.reset();
-//        canvas.translate(200, 200);
-//        mPaint.setColor(Color.YELLOW);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("平移后的文字", 200, 200, mPaint);
+        //设置画笔颜色
+        mPaint.setColor(Color.BLACK);
+        //设置画笔空心线的宽度
+        mPaint.setStrokeWidth(10);
+        //绘制直线
+        canvas.drawLine(0, 100, 200, 0, mPaint);
+        //重置画笔
+
+
+        /**
+         *  绘制带边框的矩形
+         */
+        //画笔设置颜色
+        mPaint.setColor(Color.BLACK);
+        //画笔设置argb色值
+        mPaint.setARGB(150, 90, 255, 0);
+        //设置画笔样式 空心样式
+        mPaint.setStyle(Paint.Style.STROKE);
+        //创建一个矩形 参数传矩形的左上右下坐标点
+        Rect rect = new Rect(0, 0, 100, 100);
+        //绘制矩形
+        canvas.drawRect(rect, mPaint);
+        //重置画笔
+        mPaint.reset();
+
+
+        /**
+         * 绘制实心圆
+         */
+
+        //设置画笔颜色
+        mPaint.setColor(Color.BLUE);
+        //设置画笔样式
+        mPaint.setStyle(Paint.Style.FILL);
+        //设置画笔抗锯齿
+        mPaint.setAntiAlias(true);
+        //绘制圆形  参数 圆形的宽高，半径，画笔
+        canvas.drawCircle(200, 200, 100, mPaint);
+        //重置画笔
+        mPaint.reset();
+
+        /**
+         * 绘制椭圆形
+         */
+
+        //设置画笔颜色
+        mPaint.setColor(Color.YELLOW);
+        //设置画笔抗锯齿
+        mPaint.setAntiAlias(true);
+        //设置画笔宽度
+        mPaint.setStrokeWidth(14);
+        //创建矩形
+        RectF rect1 = new RectF(200, 200, 400, 400);
+        //绘制椭圆形
+        canvas.drawOval(rect1, mPaint);
+        //重置画笔
+        mPaint.reset();
+
+
+        /**
+         * 绘制文字
+         */
+
+        //设置画笔颜色
+        mPaint.setColor(Color.BLACK);
+        //设置文字大小
+        mPaint.setTextSize(60);
+        //设置文字下划线
+        mPaint.setUnderlineText(true);
+        //绘制文字 参数 绘制的内容 绘制的x，y坐标点，画笔
+        canvas.drawText("文本内容", 100, 100, mPaint);
+        //重置画笔
+        mPaint.reset();
+
+
+        /**
+         * canvas的一些常用api使用
+         */
+
+
+        /**
+         * canvas.translate
+         * 画布平移的使用
+         */
+
+        canvas.drawColor(Color.LTGRAY);
+        mPaint.setColor(Color.BLUE);
+        mPaint.setTextSize(60);
+        canvas.drawText("平移前的文字", 200, 200, mPaint);
+        mPaint.reset();
+        canvas.translate(200, 200);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setTextSize(60);
+        canvas.drawText("平移后的文字", 200, 200, mPaint);
 
 
         /**
@@ -158,15 +278,15 @@ public class CommonView extends View
          * 旋转画布
          */
 
-//        canvas.drawColor(Color.LTGRAY);
-//        mPaint.setColor(Color.BLUE);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("平移前的文字", 200, 200, mPaint);
-//        mPaint.reset();
-//        canvas.rotate(10);
-//        mPaint.setColor(Color.YELLOW);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("平移后的文字", 200, 200, mPaint);
+        canvas.drawColor(Color.LTGRAY);
+        mPaint.setColor(Color.BLUE);
+        mPaint.setTextSize(60);
+        canvas.drawText("平移前的文字", 200, 200, mPaint);
+        mPaint.reset();
+        canvas.rotate(10);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setTextSize(60);
+        canvas.drawText("平移后的文字", 200, 200, mPaint);
 
 
         /**
@@ -175,15 +295,15 @@ public class CommonView extends View
          * 画布裁剪
          */
 
-//        canvas.drawColor(Color.GREEN);
-//        mPaint.setColor(Color.YELLOW);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("裁剪前的内容", 200, 200, mPaint);
-//        Rect rect = new Rect(200, 400, 800, 800);
-//        canvas.clipRect(rect);
-//        canvas.drawColor(Color.BLUE);
-//        mPaint.setColor(Color.BLACK);
-//        canvas.drawText("裁剪后的内容", 200, 200, mPaint);
+        canvas.drawColor(Color.GREEN);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setTextSize(60);
+        canvas.drawText("裁剪前的内容", 200, 200, mPaint);
+        Rect rect2 = new Rect(200, 400, 800, 800);
+        canvas.clipRect(rect2);
+        canvas.drawColor(Color.BLUE);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawText("裁剪后的内容", 200, 200, mPaint);
 
 
         /**
@@ -193,18 +313,18 @@ public class CommonView extends View
          */
 
 
-//        canvas.drawColor(Color.GREEN);
-//        mPaint.setColor(Color.YELLOW);
-//        mPaint.setTextSize(60);
-//        canvas.drawText("裁剪前的内容", 200, 200, mPaint);
-//        canvas.save();
-//        Rect rect = new Rect(100, 100, 400, 400);
-//        canvas.clipRect(rect);
-//        canvas.drawColor(Color.BLUE);
-//        mPaint.setColor(Color.BLACK);
-//        canvas.drawText("裁剪后的内容", 200, 200, mPaint);
-//        canvas.restore();
-//        canvas.drawText("1111", 100, 200, mPaint);
+        canvas.drawColor(Color.GREEN);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setTextSize(60);
+        canvas.drawText("裁剪前的内容", 200, 200, mPaint);
+        canvas.save();
+        Rect rect3 = new Rect(100, 100, 400, 400);
+        canvas.clipRect(rect3);
+        canvas.drawColor(Color.BLUE);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawText("裁剪后的内容", 200, 200, mPaint);
+        canvas.restore();
+        canvas.drawText("1111", 100, 200, mPaint);
 
 
         /**
@@ -271,10 +391,5 @@ public class CommonView extends View
 //        canvas.drawPath(path, mPaint);
 
 
-
-
-
-
     }
-
 }

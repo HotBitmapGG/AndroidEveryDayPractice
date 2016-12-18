@@ -5,7 +5,12 @@
     android:orientation="vertical">
 
 
-    <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SearchViewAnim
+    <!--<io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SearchViewAnim-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <io.netopen.hotbitmapgg.androideverydaypractice.widget.other.SlackAnimView
+        android:id="@+id/slack_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

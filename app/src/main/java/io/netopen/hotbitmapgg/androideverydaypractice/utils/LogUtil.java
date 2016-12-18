@@ -6,6 +6,7 @@ public class LogUtil
 {
 
     private static final String TAG = "LogUtil";
+
     // 是否显示Log消息
     private static boolean isShow = true;
 
